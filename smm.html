@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACF SMM PANEL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease; /* Change animation to fade in */
+    }
+    select, input[type="text"], input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .service-box {
+      display: none;
+    }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1><i>ACF SMM PANEL</i></h1>
+    <form action="https://formspree.io/f/mbjnoyjq" method="POST">
+      <input type="text" name="userId" placeholder="Enter Unique User ID" required>
+      <select name="serviceSelect" onchange="showServiceOptions()">
+        <option value="" selected disabled>Choose a Service</option>
+        <optgroup label="ACF Services">
+          <option value="ACf 2.0 Paid Group">ACF 2.0 Paid Group</option>
+          <option value="Whatsapp Marketing Tool">Whatsapp Marketing Tool</option>
+          <option value="Whatsapp Ban/Unban">Whatsapp Ban/Unban</option>
+          <option value="5000+ AI HINDI REELZ">5000+ AI Hindi Reels</option>
+          <option value="EBEE-TOOLKIT LIFETIME LOGIN">EBEE-TOOLKIT LIFETIME LOGIN</option>
+        <optgroup label="YouTube">
+          <option value="YouTube Views">YouTube Views</option>
+          <option value="YouTube Likes">YouTube Likes</option>
+          <option value="YouTube Subscribers">YouTube Subscribers</option>
+          <option value="YouTube Comments">YouTube Comments</option>
+          <option value="YouTube Shares">YouTube Shares</option>
+          <option value="YouTube Live Stream Views">YouTube Live Stream Views</option>
+          <option value="YouTube Monetization">YouTube Monetization</option>
+        </optgroup>
+        <optgroup label="Facebook">
+          <option value="Facebook Page Likes">Facebook Page Likes</option>
+          <option value="Facebook Post Likes">Facebook Post Likes</option>
+          <option value="Facebook Followers">Facebook Followers</option>
+          <option value="Facebook Shares">Facebook Shares</option>
+          <option value="Facebook Comments">Facebook Comments</option>
+          <option value="Facebook Video Views">Facebook Video Views</option>
+          <option value="Facebook Event Attendees">Facebook Event Attendees</option>
+        </optgroup>
+        <optgroup label="Instagram">
+          <option value="Instagram Followers">Instagram Followers</option>
+          <option value="Instagram Likes">Instagram Likes</option>
+          <option value="Instagram Views">Instagram Views</option>
+          <option value="Instagram Comments">Instagram Comments</option>
+          <option value="Instagram Saves">Instagram Saves</option>
+          <option value="Instagram Story Views">Instagram Story Views</option>
+          <option value="Instagram Reels Views">Instagram Reels Views</option>
+          <option value="Instagram IGTV Views">Instagram IGTV Views</option>
+          <option value="Instagram Verify Badge Service">Instagram Verify Badge Service</option>
+        </optgroup>
+        <optgroup label="Twitter">
+          <option value="Twitter Followers">Twitter Followers</option>
+          <option value="Twitter Likes (Favorites)">Twitter Likes (Favorites)</option>
+          <option value="Twitter Retweets">Twitter Retweets</option>
+          <option value="Twitter Comments">Twitter Comments</option>
+          <option value="Twitter Poll Votes">Twitter Poll Votes</option>
+          <option value="Twitter Impressions">Twitter Impressions</option>
+          <option value="Twitter Verification Services">Twitter Verification Services</option>
+        </optgroup>
+        <optgroup label="TikTok">
+          <option value="TikTok Followers">TikTok Followers</option>
+          <option value="TikTok Likes">TikTok Likes</option>
+          <option value="TikTok Views">TikTok Views</option>
+          <option value="TikTok Comments">TikTok Comments</option>
+          <option value="TikTok Shares">TikTok Shares</option>
+          <option value="TikTok Ads">TikTok Ads</option>
+        </optgroup>
+      </select>
+      <div class="service-box" id="serviceOptions">
+        <!-- Service options will be shown here based on selection -->
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    function showServiceOptions() {
+      var selectBox = document.getElementsByName("serviceSelect")[0];
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      var serviceBox = document.getElementById("serviceOptions");
+
+      // Clear previous options
+      serviceBox.innerHTML = "";
+
+      // Show options based on selection
+      switch (selectedValue) {
+        case "YouTube Views":
+          serviceBox.innerHTML = "Options for YouTube Views";
+          break;
+        case "YouTube Likes":
+          serviceBox.innerHTML = "Options for YouTube Likes";
+          break;
+        // Add cases for other services here
+        default:
+          serviceBox.innerHTML = "";
+          break;
+      }
+
+      // Show the service box
+      serviceBox.style.display = "block";
+    }
+  </script>
+</body>
+</html>
